@@ -36,4 +36,26 @@
     console.log("Crear actor", birthdate);
     return true;
   }
+  // Continuar
+  interface PropsPayAmount {
+    isDead: boolean;
+    isSeparated: boolean;
+    isRetired: boolean;
+  }
+  const getPayAmount = ({
+    isDead = false,
+    isSeparated = true,
+    isRetired = false,
+  }: PropsPayAmount): number => {
+    let result;
+
+    if (isDead) {
+      result = 1500;
+    }
+    if (isSeparated) {
+      result = 2500;
+    }
+
+    return isRetired ? 3000 : 4000;
+  };
 })();
